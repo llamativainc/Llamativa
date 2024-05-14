@@ -114,56 +114,40 @@ section {
 }
 
 /* Estilos para el footer */
-.footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+footer {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
 }
 
-.footer-content {
-    margin-right: 20px;
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.logo-footer {
+    margin-bottom: 10px;
+}
+
+.footer-contact {
+    margin-bottom: 10px;
+}
+
+.footer-copyright {
+    margin-top: 10px;
+}
 .footer-social {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .footer-social a {
     margin-right: 10px;
+    color: #fff; /* Color de los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
 }
 
-.logo-footer {
-    margin-right: 10px;
-}
-
-.logo-footer img {
-    max-width: 100px;
-}
-
-.footer-copyright {
-    margin-top: 20px;
-}
-
-.footer-icon {
-    color: #fff;
-    font-size: 20px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
 /* Testimonios */
 #testimonios {
@@ -353,6 +337,8 @@ footer {
     transition: transform 0.5s ease;
 }
 
+
+
 /* Efecto de parallax */
 #creatividad.parallax {
     background-attachment: fixed;
@@ -515,3 +501,15 @@ footer {
 }
 
 
+/* Estilos para dispositivos móviles */
+@media (max-width: 30%) {
+    nav ul {
+        margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
+        text-align: left; /* Alinear los enlaces a la derecha en dispositivos móviles */
+    }
+    nav ul li {
+        display: block; /* Convertir los elementos de lista en bloques para que se muestren uno debajo del otro */
+        margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
+        margin-bottom: 10px; /* Agregar espacio entre los elementos de lista */
+    }
+}
