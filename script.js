@@ -28,3 +28,7 @@ imagesWithHover.forEach(image => {
         image.style.filter = 'none';
     });
 });
+
+document.querySelector('.menu-btn').addEventListener('click', function() {
+    document.querySelector('nav').classList.toggle('active');
+});
