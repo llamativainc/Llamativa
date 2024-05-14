@@ -148,6 +148,47 @@ footer {
     font-size: 24px; /* Tamaño de los iconos */
 }
 
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px; /* Agrega espacio alrededor del footer */
+    text-align: center;
+    clear: both; /* Evita que otros elementos floten alrededor del footer */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos del footer horizontalmente */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas si no caben en una sola línea */
+}
+
+.footer-content {
+    margin-bottom: 20px; /* Espacio entre el contenido del footer y los iconos sociales */
+}
+
+.footer-social {
+    margin-top: 20px; /* Espacio entre los iconos sociales y el contenido del footer */
+}
+/* Estilos para el formulario de contacto */
+#contacto {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    clear: both; /* Asegura que el formulario no se superponga sobre el footer */
+    overflow: auto; /* Asegura que el formulario no se desborde sobre el footer */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    clear: both;
+}
+
 
 /* Testimonios */
 #testimonios {
@@ -512,4 +553,51 @@ footer {
         margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
         margin-bottom: 10px; /* Agregar espacio entre los elementos de lista */
     }
+}
+
+/* Estilos para el botón de menú */
+.menu-btn {
+    display: none; /* Oculta el botón de menú por defecto */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilos para el menú de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Mostrar el menú de navegación cuando se hace clic en el botón de menú */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* Muestra el botón de menú en dispositivos móviles */
+    }
+
+    nav ul {
+        display: none; /* Oculta la lista de navegación por defecto en dispositivos móviles */
+    }
+
+    nav.active ul {
+        display: block; /* Muestra la lista de navegación cuando el menú está activo */
+    }
+}
+.menu-toggle {
+    float: right; /* Alinea el botón del menú a la derecha */
 }
