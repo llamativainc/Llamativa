@@ -414,14 +414,35 @@ footer {
     position: relative; /* Permite el posicionamiento relativo */
 }
 
-.client-logos img {
-    max-width: 100%;
-    height: auto;
-    width: 20%; /* Cambia el valor según sea necesario */
-    margin: 20px; /* Añade margen entre las imágenes */
-    position: relative; /* Permite el posicionamiento relativo */
-    z-index: 0; /* Asegura que los logos estén detrás del título */
+/* Estilos para la sección de Clientes (logos de clientes) */
+#clientes {
+    padding: 50px 0;
+    text-align: center;
 }
+
+#clientes h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.client-logos-container {
+    margin-bottom: 20px; /* Añadir margen inferior para separar el título de los logos */
+}
+
+.client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-logos img {
+    max-width: 80%; /* Reducir el tamaño máximo de los logos */
+    height: auto;
+    margin: 20px; /* Añade margen entre las imágenes */
+}
+
 /* Estilos para la sección "Acerca de Nosotros" */
 #acerca {
     position: relative;
