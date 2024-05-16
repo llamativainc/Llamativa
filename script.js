@@ -16,19 +16,13 @@ images.forEach(image => {
     image.style.height = 'auto';
 });
 
-// script.js - Función de cambio de color al pasar el mouse a magenta
-const imagesWithHover = document.querySelectorAll('.image img');
 
-imagesWithHover.forEach(image => {
-    image.addEventListener('mouseover', function() {
-        image.style.filter = 'brightness(70%) sepia(100%) hue-rotate(300deg)';
-    });
-
-    image.addEventListener('mouseout', function() {
-        image.style.filter = 'none';
-    });
-});
-
+// script.js - Función para mostrar y ocultar el menú en dispositivos móviles
 document.querySelector('.menu-btn').addEventListener('click', function() {
     document.querySelector('nav').classList.toggle('active');
 });
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('nav').classList.remove('active');
+});
+
