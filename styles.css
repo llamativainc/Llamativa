@@ -1,26 +1,25 @@
 /* Estilos Generales */
 body {
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 20;
     font-size: 16px;
     line-height: 1.5;
-    padding-top: 50px; /* Ajustar el espacio superior para evitar que se superponga el contenido */
+    margin: 0;
+    padding: 20px;
+    padding-top: 50px;
 }
 
 /* Encabezado */
 header {
-    position: fixed; /* Fijar el encabezado */
-    top: 0; /* Colocarlo en la parte superior */
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%; /* Ancho completo */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
-    z-index: 9999; /* Asegurar que esté por encima de otros elementos */
-    padding: 10px 20px; /* Añadir espacio interno */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0;
 }
 
 .logo {
@@ -35,10 +34,10 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin-right: 20px;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
@@ -54,6 +53,135 @@ nav ul li a:hover {
     background-color: #555;
     color: rgb(247, 5, 154);
 }
+
+/* Botón de menú para dispositivos móviles */
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        font-size: 24px;
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+}
+
+
+/* Botón de menú para dispositivos móviles */
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        padding: 10px; /* Agrega padding para personalización */
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo personalizado */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Esquinas redondeadas */
+        position: fixed;
+        top: 10px;
+        right: 20px; /* Espaciado desde el borde derecho */
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column; /* Alinear en columna */
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        font-size: 24px;
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
+    .close-btn {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    nav.active .close-btn {
+        display: block;
+    }
+}
+
+/* Estilos para la X de cerrar en la versión de escritorio */
+.close-btn {
+    display: none; /* Oculta la X de cerrar en la versión de escritorio */
+}
+
 
 /* Secciones */
 section {
@@ -92,7 +220,7 @@ section {
 
 .image img {
     max-width: 50%;
-    height: auto; /* Imágenes responsive */
+    height: auto;
     display: block;
 }
 
@@ -115,54 +243,81 @@ section {
 }
 
 /* Estilos para el footer */
-.footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+footer {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
 }
 
-.footer-content {
-    margin-right: 20px;
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.logo-footer {
+    margin-bottom: 10px;
+}
+
+.footer-contact {
+    margin-bottom: 10px;
+}
+
+.footer-copyright {
+    margin-top: 10px;
+}
 .footer-social {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .footer-social a {
     margin-right: 10px;
+    color: #fff; /* Color de los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
 }
 
-.logo-footer {
-    margin-right: 10px;
-}
-
-.logo-footer img {
-    max-width: 100px;
-}
-
-.footer-copyright {
-    margin-top: 20px;
-}
-.footer-icon {
-    color: #fff;
-    font-size: 20px;
-}
+/* Estilos para el footer */
 footer {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 20px; /* Agrega espacio alrededor del footer */
     text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    clear: both; /* Evita que otros elementos floten alrededor del footer */
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos del footer horizontalmente */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas si no caben en una sola línea */
+}
+
+.footer-content {
+    margin-bottom: 20px; /* Espacio entre el contenido del footer y los iconos sociales */
+}
+
+.footer-social {
+    margin-top: 20px; /* Espacio entre los iconos sociales y el contenido del footer */
+}
+/* Estilos para el formulario de contacto */
+#contacto {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    clear: both; /* Asegura que el formulario no se superponga sobre el footer */
+    overflow: auto; /* Asegura que el formulario no se desborde sobre el footer */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    clear: both;
+}
+
 
 /* Testimonios */
 #testimonios {
@@ -193,53 +348,64 @@ footer {
     margin-bottom: 10px;
 }
 
-/* Estilos del Formulario de Contacto */
 #contacto {
-    padding: 50px 0;
-    background-color: #f9f9f9;
-    text-align: center;
+    padding: 50px 0; /* Ajusta el padding según sea necesario */
+    background-color: #f9f9f9; /* Cambia el color de fondo según tus preferencias */
+    text-align: center; /* Centra el contenido */
+    position: relative; /* Establece la posición relativa para los elementos hijos */
 }
 
-.text form {
-    max-width: 400px;
-    margin: 0 auto;
+#contacto .section-content {
+    position: relative; /* Establece la posición relativa para los elementos hijos */
 }
 
-.text form label {
-    display: block;
-    margin-bottom: 10px;
+#contacto .text {
+    position: relative; /* Establece la posición relativa para los elementos hijos */
+    z-index: 1; /* Asegura que el texto esté por encima de la capa transparente */
+    color: #fff; /* Color de texto blanco para mayor contraste */
+    padding: 0 20px; /* Añade un pequeño padding horizontal para separar el texto del borde */
 }
 
-.text form input[type="text"],
-.text form input[type="email"],
-.text form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
+#contacto form {
+    max-width: 400px; /* Ajusta el ancho máximo del formulario según sea necesario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
 }
 
-.text form textarea {
-    height: 150px;
+#contacto form label {
+    display: block; /* Muestra las etiquetas en bloques para que estén en una línea */
+    margin-bottom: 10px; /* Ajusta el margen inferior entre etiquetas */
 }
 
-.text form button[type="submit"] {
-    background-color: #000;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+#contacto form input[type="text"],
+#contacto form input[type="email"],
+#contacto form textarea {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 15px; /* Ajusta el padding interno */
+    margin-bottom: 20px; /* Ajusta el margen inferior entre campos */
+    border: 1px solid #ccc; /* Añade un borde */
+    border-radius: 5px; /* Añade esquinas redondeadas */
+    font-family: 'Montserrat', sans-serif; /* Utiliza una fuente específica */
 }
 
-.text form button[type="submit"]:hover {
-    background-color: #333;
+#contacto form textarea {
+    height: 150px; /* Establece una altura fija para el área de texto */
+}
+
+#contacto form button[type="submit"] {
+    background-color: #000; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    padding: 15px 30px; /* Ajusta el padding del botón */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 5px; /* Añade esquinas redondeadas al botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente del botón */
+    text-transform: uppercase; /* Transforma el texto del botón a mayúsculas */
+    font-weight: bold; /* Establece el peso de la fuente del botón */
+    font-family: 'Montserrat', sans-serif; /* Utiliza una fuente específica */
+}
+
+#contacto form button[type="submit"]:hover {
+    background-color: #333; /* Cambia el color de fondo al pasar el cursor sobre el botón */
 }
 
 /* Parallax */
@@ -288,68 +454,81 @@ footer {
     font-weight: bold;
 }
 
+.client-logos-container {
+    margin-bottom: 20px; /* Añadir margen inferior para separar el título de los logos */
+}
+
 .client-logos {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .client-logos img {
-    margin: 0 20px;
+    max-width: 80%; /* Reducir el tamaño máximo de los logos */
+    height: auto;
+    margin: 20px; /* Añade margen entre las imágenes */
+}
+
+/* Estilos para el título */
+.client-logos-title {
+    margin-bottom: 20px; /* Espacio entre el título y los logos */
 }
 
 /* Estilos para la sección de Creatividad */
 #creatividad {
-    position: relative; /* Establece la posición relativa para los elementos hijos */
-    padding: 100px 0; /* Ajusta el padding según sea necesario */
-    text-align: center; /* Centra el contenido */
-    overflow: hidden; /* Oculta el contenido que se desborda */
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    overflow: hidden;
 }
 
 #creatividad .section-content {
-    position: relative; /* Establece la posición relativa para los elementos hijos */
-    z-index: 1; /* Asegura que el contenido esté por encima de la imagen de fondo */
+    position: relative;
+    z-index: 1;
 }
 
 #creatividad .overlay-image {
-    position: absolute; /* Establece la posición absoluta para la capa transparente */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente para mejorar la legibilidad del texto */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #creatividad .text {
-    position: relative; /* Establece la posición relativa para los elementos hijos */
-    z-index: 1; /* Asegura que el texto esté por encima de la capa transparente */
-    color: #fff; /* Color de texto blanco para mayor contraste */
-    padding: 0 20px; /* Añade un pequeño padding horizontal para separar el texto del borde */
-    transform: translateY(50%); /* Inicia el texto en la mitad de la sección */
-    transition: transform 0.5s ease; /* Agrega una transición suave */
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 0 20px;
+    transform: translateY(50%);
+    transition: transform 0.5s ease;
 }
+
+
 
 /* Efecto de parallax */
 #creatividad.parallax {
-    background-attachment: fixed; /* Fija la imagen de fondo */
+    background-attachment: fixed;
 }
 
 /* Efecto de parallax al hacer scroll */
 @media (min-width: 768px) {
     #creatividad.parallax {
-        background-position: center top; /* Ajusta la posición de la imagen de fondo */
+        background-position: center top;
     }
 
     #creatividad.parallax .text {
-        transform: translateY(0); /* Mueve el texto hacia arriba al hacer scroll */
+        transform: translateY(0);
     }
 }
-
 
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* Proporción 16:9 */
+    padding-bottom: 56.25%;
     overflow: hidden;
 }
 
@@ -361,67 +540,44 @@ footer {
     height: 100%;
 }
 
+/* Estilos para la sección de Servicios */
+#servicios {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#servicios h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 .services-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 10 -10px; /* Reduce el espacio entre los servicios */
+    margin: 10px -10px; /* Reduce el espacio entre los servicios */
 }
 
 .service {
-    flex: 0 0 calc(33.33% - 20px); /* Tres servicios por fila */
+    flex: 1 0 auto; /* El tamaño puede cambiar, pero no se encogerá por debajo del ancho mínimo */
     margin: 10px;
     text-align: center;
+    max-width: 300px; /* Ancho máximo de cada servicio */
+}
+
+.service:first-child img {
+    max-width: 100%; /* Establece el ancho máximo al 100% para la primera imagen */
 }
 
 .service img {
-    width: 60%;
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-#contacto {
-    padding: 50px 0; /* Ajusta el padding según sea necesario */
-    background-color: #f9f9f9; /* Cambia el color de fondo según tus preferencias */
-    text-align: center; /* Centra el contenido */
-    position: relative; /* Establece la posición relativa para los elementos hijos */
-}
 
-#contacto .section-content {
-    position: relative; /* Establece la posición relativa para los elementos hijos */
-}
-
-
-#contacto .text {
-    position: relative; /* Establece la posición relativa para los elementos hijos */
-    z-index: 1; /* Asegura que el texto esté por encima de la capa transparente */
-    color: #fff; /* Color de texto blanco para mayor contraste */
-    padding: 0 20px; /* Añade un pequeño padding horizontal para separar el texto del borde */
-}
-.section-title {
-    text-align: center; /* Centra el título */
-    margin-bottom: 20px; /* Ajusta el margen inferior del título */
-    position: relative; /* Permite el posicionamiento relativo */
-    z-index: 1; /* Asegura que el título esté por encima de los logos */
-}
-
-.client-logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: right;
-    position: relative; /* Permite el posicionamiento relativo */
-}
-
-.client-logos img {
-    max-width: 100%;
-    height: auto;
-    width: 20%; /* Cambia el valor según sea necesario */
-    margin: 20px; /* Añade margen entre las imágenes */
-    position: relative; /* Permite el posicionamiento relativo */
-    z-index: 0; /* Asegura que los logos estén detrás del título */
-}
 /* Estilos para la sección "Acerca de Nosotros" */
 #acerca {
     position: relative;
@@ -429,7 +585,7 @@ footer {
 }
 
 #acerca .parallax-container {
-    position: relative; /* Ajustamos la posición a relativa para permitir superposición */
+    position: relative;
     background-image: url('https://i.postimg.cc/FHgNYw7d/banner-about-us.png');
     background-attachment: fixed;
     background-position: center;
@@ -445,7 +601,7 @@ footer {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0; /* Asegura que el overlay esté detrás del contenido */
+    z-index: 0;
 }
 
 #acerca .section-content {
@@ -455,7 +611,7 @@ footer {
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-    z-index: 1; /* Asegura que el contenido esté por encima del overlay */
+    z-index: 1;
 }
 
 #acerca .text {
@@ -467,13 +623,12 @@ footer {
 /* Ajuste del tamaño del overlay para que coincida con la imagen */
 @media (min-width: 768px) {
     #acerca .overlay-background {
-        width: calc(100% + 40px); /* Ajuste para compensar el ancho del scroll */
-        height: calc(100% + 40px); /* Ajuste para compensar el ancho del scroll */
-        top: -20px; /* Ajuste para compensar el ancho del scroll */
-        left: -20px; /* Ajuste para compensar el ancho del scroll */
+        width: calc(100% + 40px);
+        height: calc(100% + 40px);
+        top: -20px;
+        left: -20px;
     }
 }
-
 
 /* Estilos para la sección "Portafolio" */
 #portafolio {
@@ -514,4 +669,72 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 30%) {
+    nav ul {
+        margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
+        text-align: left; /* Alinear los enlaces a la derecha en dispositivos móviles */
+    }
+    nav ul li {
+        display: block; /* Convertir los elementos de lista en bloques para que se muestren uno debajo del otro */
+        margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
+        margin-bottom: 10px; /* Agregar espacio entre los elementos de lista */
+    }
+}
+
+/* Estilos para el botón de menú */
+.menu-btn {
+    display: none; /* Oculta el botón de menú por defecto */
+    background: none;
+    border: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilos para el menú de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Mostrar el menú de navegación cuando se hace clic en el botón de menú */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* Muestra el botón de menú en dispositivos móviles */
+    }
+
+    nav ul {
+        display: none; /* Oculta la lista de navegación por defecto en dispositivos móviles */
+    }
+
+    nav.active ul {
+        display: block; /* Muestra la lista de navegación cuando el menú está activo */
+    }
+}
+.menu-toggle {
+    float: right; /* Alinea el botón del menú a la derecha */
+}
+
+/* Añadir un margen derecho al menú */
+nav {
+    margin-right: 20px; /* Ajusta el valor según tus necesidades */
+    /* Otros estilos existentes */
+}
+
 
