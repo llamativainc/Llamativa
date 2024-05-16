@@ -601,3 +601,9 @@ nav ul li a {
 .menu-toggle {
     float: right; /* Alinea el botón del menú a la derecha */
 }
+/* Añadir padding a los elementos del menú */
+nav ul {
+    padding-right: 20px; /* Ajusta el valor según tus necesidades */
+    /* Otros estilos existentes */
+}
+
